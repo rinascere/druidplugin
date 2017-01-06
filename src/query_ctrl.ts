@@ -265,6 +265,12 @@ export class DruidQueryCtrl extends QueryCtrl {
       this.targetBlur();
     }
 
+    editAggregator(index) {
+     this.addAggregatorMode = true;
+     var delAggregator = this.target.aggregators.splice(index, 1);
+     this.target.currentAggregator = delAggregator[0];
+    }
+
     removeAggregator(index) {
       this.target.aggregators.splice(index, 1);
       this.targetBlur();
@@ -295,6 +301,12 @@ export class DruidQueryCtrl extends QueryCtrl {
       }
 
       this.targetBlur();
+    }
+
+    editPostAggregator(index) {
+      this.addPostAggregatorMode = true;
+      var delPostAggregator = this.target.postAggregators.splice(index, 1);
+      this.target.currentPostAggregator = delPostAggregator[0];
     }
 
     removePostAggregator(index) {
